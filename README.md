@@ -7,8 +7,8 @@ My submission for the second semester exam project demonstrates my ability to cr
 ## Public IP - 18.212.6.222
 
 ## Screenshots
-![Landing Page 1](Landing-page-1.png)
-![Landing Page 2](Landing-page-2.png)
+![landing page](landing page.png)
+![Landing Page 2](Landing page 2.png)
 
 ## Steps Used to complete project:
 
