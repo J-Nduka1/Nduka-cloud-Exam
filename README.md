@@ -22,3 +22,4 @@ Secured the domain with Certbot + Let's Encrypt
 Created a custom dynamic HTML landing page
 I allowed inbound HTTP (80) and HTTPS (443) 
 I initialized a git repository and pushed my work to Github
+
