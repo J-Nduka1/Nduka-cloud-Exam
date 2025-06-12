@@ -1,0 +1,45 @@
+2025-06-10 02:51:11,539:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-06-10 02:51:11,539:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-06-10 02:51:11,539:DEBUG:certbot._internal.main:Arguments: ['--nginx']
+2025-06-10 02:51:11,539:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#nginx,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-06-10 02:51:11,546:DEBUG:certbot._internal.lock:A lock on /var/log/letsencrypt/.certbot.lock is held by another process.
+2025-06-10 02:51:11,546:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 126, in _try_lock
+    fcntl.lockf(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1884, in main
+    log.post_arg_parse_setup(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/log.py", line 110, in post_arg_parse_setup
+    file_handler, file_path = setup_log_file_handler(
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/log.py", line 164, in setup_log_file_handler
+    util.set_up_core_dir(config.logs_dir, 0o700, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 112, in acquire
+    self._try_lock(fd)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 130, in _try_lock
+    raise errors.LockError('Another instance of Certbot is already running.')
+certbot.errors.LockError: Another instance of Certbot is already running.
+2025-06-10 02:51:11,546:ERROR:certbot._internal.log:Another instance of Certbot is already running.
