@@ -20,11 +20,11 @@ My submission for the second semester exam project demonstrates my ability to cr
 I launched an Ubuntu EC2 instance on AWS 22.04 LTS AMI.
 Then connected via SSH using a pem key.
 I designed the landing page with HTML, CSS and an image.
-Installed Node.js and built a simple Express server
+Installed Node.js and built a simple Express server.
 Installed Nginx and set up a reverse proxy to Node.
-I configured a custom domain - nduka.crabdance.com
-Secured the domain with Certbot + Let's Encrypt
-Created a custom dynamic HTML landing page
-I allowed inbound HTTP (80) and HTTPS (443) 
-I initialized a git repository and pushed my work to Github
+I configured a custom domain - nduka.crabdance.com.
+Secured the domain with Certbot + Let's Encrypt.
+Created a custom dynamic HTML landing page.
+I allowed inbound HTTP (80) and HTTPS (443). 
+Finally, I initialized a git repository and pushed my work to Github
 
